@@ -1,0 +1,37 @@
+/* Pebbloom site - tokens from docs/art/style-guide.md (light + dark) */
+@font-face { font-family: "Alegreya Sans"; src: url("fonts/AlegreyaSans-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Alegreya Sans"; src: url("fonts/AlegreyaSans-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+:root {
+  color-scheme: light dark;
+  --bg: #F2F7F5; --surface: #E3EEEA; --text: #22332F; --muted: #3F5A54; --accent: #3D7268; --water: #C6E4DA; --water-hi: #E2F3ED;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1B2422; --surface: #26322F; --text: #E6F0EC; --muted: #B9CCC6; --accent: #9DD8CB; --water: #344F49; --water-hi: #436159; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 18px/1.55 "Alegreya Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+main { max-width: 680px; margin: 0 auto; padding: 32px 22px 56px; }
+header.site { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+header.site img { width: 56px; height: 56px; border-radius: 13px; }
+header.site a { color: var(--text); text-decoration: none; font-weight: 700; font-size: 24px; }
+h1 { font-size: 34px; line-height: 1.15; margin: 0 0 10px; }
+h2 { font-size: 22px; margin: 34px 0 8px; }
+h3 { font-size: 19px; margin: 22px 0 4px; }
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 22px; }
+li { margin-bottom: 6px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.lead { font-size: 21px; color: var(--muted); }
+.card { background: var(--surface); border-radius: 22px; padding: 18px 22px; margin: 18px 0; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+.pond { height: 10px; border-radius: 10px; margin: 26px 0; background: linear-gradient(90deg, var(--water-hi), var(--water), var(--water-hi)); }
+.meta { color: var(--muted); font-size: 16px; }
+nav.links { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+nav.links a { display: inline-block; background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 700; padding: 10px 20px; border-radius: 999px; }
+footer { margin-top: 44px; color: var(--muted); font-size: 15px; }
+footer a { color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { nav.links a { transition: opacity .2s ease; } nav.links a:hover { opacity: .85; } }
